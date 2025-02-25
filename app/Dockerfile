@@ -9,8 +9,8 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 COPY . /app
 
-ENTRYPOINT ["python3"]
-CMD ["app.py","--port=3000"]
+ENTRYPOINT ["gunicorn"]
+CMD ["-w 4 -b 0.0.0.0:80001 app:app"]
 
 FROM builder as dev-envs
 
