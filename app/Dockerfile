@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.4
-FROM --platform=$BUILDPLATFORM python:3.12-slim-buster AS builder
+FROM --platform=$BUILDPLATFORM python:3.12.9-slim-bookworm AS builder
 
 WORKDIR /app
 
