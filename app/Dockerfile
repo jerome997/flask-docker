@@ -9,8 +9,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 COPY . /app
 
-ENTRYPOINT ["gunicorn"]
-CMD ["-w 4 -b 0.0.0.0:80001 app:app"]
+CMD ["gunicorn","-w 4","-b","0.0.0.0:8001","app:app"]
 
 FROM builder as dev-envs
 
