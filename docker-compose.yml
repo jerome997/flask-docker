@@ -8,4 +8,6 @@ services:
     stop_signal: SIGINT
     ports:
       - "8001:8001"
+    volumes:
+      - ./:/app
     image: flask-docker:latest
